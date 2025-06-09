@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const Site = require("../model/Site");
 const OtherTransaction = require("../model/OtherTransaction");
 const PasswordResetCode = require("../model/PasswordResetCode");
-const { sendPasswordResetEmail } = require("../resend/sendPasswordResetEmail");
+const sendPasswordResetEmail = require("../resend/sendPasswordResetEmail");
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {

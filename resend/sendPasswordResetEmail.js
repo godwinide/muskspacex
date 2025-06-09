@@ -1,6 +1,6 @@
 const resend = require("resend")
 
-export async function sendPasswordResetEmail(receipient, linkId){
+async function sendPasswordResetEmail(receipient, linkId){
     const resend = new resend.Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
         from: "Musk Space <noreply@spacexmusk.icu>",
@@ -13,3 +13,5 @@ export async function sendPasswordResetEmail(receipient, linkId){
             `
       });
 }
+
+module.exports = sendPasswordResetEmail
