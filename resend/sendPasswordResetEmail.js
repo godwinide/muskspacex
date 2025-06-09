@@ -1,7 +1,7 @@
-const resend = require("resend")
+const {Resend} = require("resend")
 
 async function sendPasswordResetEmail(receipient, linkId){
-    const resend = new resend.Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
         from: "Musk Space <noreply@spacexmusk.icu>",
         subject: "Reset Password",
